@@ -1,0 +1,72 @@
+﻿<TabbedPage xmlns="http://schemas.microsoft.com/dotnet/2021/maui"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             x:Class="MemoLamppu.MainPage">
+
+    <ContentPage Title="Muisto" BackgroundImageSource="/Resource/Images/background.jpg">
+        <ContentPage.Resources>
+            <StyleSheet Source="/Resources/Styles/Style.css" />
+        </ContentPage.Resources>
+
+        <Grid RowDefinitions="*,Auto">
+            <!-- Main content and footer rows -->
+            <!-- Scrollable content in the first row -->
+            <ScrollView Grid.Row="0" HorizontalOptions="FillAndExpand">
+                <VerticalStackLayout Padding="30,0" Spacing="25" HorizontalOptions="FillAndExpand">
+                    <Frame BackgroundColor="Black" Padding="16" Opacity="0.6" HorizontalOptions="FillAndExpand" CornerRadius="0" WidthRequest="1000">
+                        <Label Text="Muistio" HorizontalTextAlignment="Center" TextColor="LightGreen" FontSize="24" HorizontalOptions="FillAndExpand"/>
+                    </Frame>
+
+                    <Entry x:Name="inputKentta" Placeholder="Kirjoita tähän, muisti lappu..." />
+
+                    <Button x:Name="tallennusNappi" StyleClass="btn" Clicked="tallennusNappi_Clicked" Text="Tallenna"
+                            BackgroundColor="LightGreen" TextColor="Black" Opacity="0.6"/>
+
+                    <Label x:Name="outputLabel" StyleClass="text" IsVisible="true" />
+
+                    <!--Poisto nappi-->
+                    <Button x:Name="poistoNappi" Text="Tyhjennä" StyleClass="btn" Clicked="poistoNappi_Clicked"
+                            BackgroundColor="LightGreen" TextColor="Black" Opacity="0.6"/>
+
+                    <Label x:Name="vahvistusInfo" IsVisible="false" Text="Vahvista poistaminen ao. kytkimellä" />
+                    <Slider x:Name="vahvistusSlider" IsVisible="false" ValueChanged="vahvistusSlider_ValueChanged" />
+                </VerticalStackLayout>
+            </ScrollView>
+
+            <!-- Footer at the bottom -->
+            <Frame Grid.Row="1" BackgroundColor="Black" Padding="16" Opacity="0.8" CornerRadius="0">
+                <Label Text="Made by Valter -2024-" HorizontalTextAlignment="Center" TextColor="LightGreen" FontSize="14"/>
+            </Frame>
+        </Grid>
+    </ContentPage>
+
+    <!-- Lamppu page -->
+    <ContentPage Title="Lamppu" BackgroundImageSource="/Resource/Images/background.jpg">
+        <Grid RowDefinitions="*,Auto">
+            <!-- Main content in the first row -->
+            <StackLayout Grid.Row="0" Spacing="10" Padding="20">
+                <Button x:Name="lamppu_on" Clicked="lamppu_on_Clicked" Text="Päälle"
+                    WidthRequest="100" HeightRequest="50"
+                    BackgroundColor="LightGreen" TextColor="Black" Opacity="0.6"/>
+                
+                <Button x:Name="lamppu_off" IsVisible="False" Clicked="lamppu_off_Clicked" Text="Pois"
+                    WidthRequest="100" HeightRequest="50 "
+                    BackgroundColor="LightGreen" TextColor="Black" Opacity="0.6"/>
+                
+                <Button Text="Blink Fast" Clicked="BlinkFastButton_Clicked"
+                    WidthRequest="100" HeightRequest="50"
+                    BackgroundColor="LightGreen" TextColor="Black" Opacity="0.6"/>
+                
+                <Button Text="SOS Signal" Clicked="SOSButton_Clicked"
+                    WidthRequest="100" HeightRequest="50"
+                    BackgroundColor="LightGreen" TextColor="Black" Opacity="0.6"/>
+            </StackLayout>
+
+            <!-- Footer at the bottom -->
+            <Frame Grid.Row="1" BackgroundColor="Black" Padding="16" Opacity="0.8" CornerRadius="0">
+                <Label Text="Made by Valter -2024-" HorizontalTextAlignment="Center" TextColor="LightGreen" FontSize="14"/>
+            </Frame>
+        </Grid>
+    </ContentPage>
+
+
+</TabbedPage>

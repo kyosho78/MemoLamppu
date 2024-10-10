@@ -1,0 +1,22 @@
+﻿body {
+}
+
+.text {
+    font-size: 20;
+    text-align: center;
+
+}
+
+/*.mainpage {
+    background-color: #4cff00;
+    opacity: 0.8;
+
+}*/
+
+.btn {
+    background-color: #000000;
+    color: white; /* Change this to the desired text color */
+}
+
+
+
